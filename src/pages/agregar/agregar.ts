@@ -35,11 +35,10 @@ export class AgregarPage {
 
   agregarContacto(){
     //console.log('Agregar contacto');
-    if ( this.nombre == "" || this.telefono == "")
+    if (!this.nombre || !this.telefono)
     {
       this.showAlert();
     }
-    /*
     else{
       const contacto = {
         nombre: this.nombre,
@@ -60,7 +59,7 @@ export class AgregarPage {
           console.log(JSON.stringify(error));
           this.navCtrl.pop();
         });
-    }*/
+    }
   }
 
   showAlert() {
