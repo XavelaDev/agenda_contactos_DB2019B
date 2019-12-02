@@ -15,13 +15,23 @@ export class HomePage {
 
   contactos:any;
   constructor(public navCtrl: NavController, public http: HttpClient){
+    //this.http.get('/agenda/agenda/')
+    //.subscribe(data => {
+    //  this.contactos = data;
+    //  console.log(JSON.stringify(data));
+    //}, error => {
+    //  console.log(JSON.stringify(error));
+    //});
+  }
+
+  ionViewWillEnter() {
     this.http.get('/agenda/agenda/')
-    .subscribe(data => {
-      this.contactos = data;
-      console.log(JSON.stringify(data));
-    }, error => {
-      console.log(JSON.stringify(error));
-    });
+      .subscribe(data => {
+        this.contactos = data;
+        console.log(JSON.stringify(data));
+      }, error => {
+        console.log(JSON.stringify(error));
+      });
   }
 
   agregarClick(){
